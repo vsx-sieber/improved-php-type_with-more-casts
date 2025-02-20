@@ -60,7 +60,8 @@ function type_cast_string_float(string $var): ?float
  */
 function type_cast_string_bool(string $var): ?bool
 {
-    return type_cast_int_bool(type_cast_string_int($var));
+    $intVal = type_cast_string_int($var);
+    return is_null($intVal) ? null : type_cast_int_bool($intVal);
 }
 
 /**
