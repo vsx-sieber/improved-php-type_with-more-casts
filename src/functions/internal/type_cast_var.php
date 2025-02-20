@@ -55,6 +55,16 @@ function type_cast_string_float(string $var): ?float
 
 /**
  * @internal
+ * @param string $var
+ * @return bool|null
+ */
+function type_cast_string_bool(string $var): ?bool
+{
+    return type_cast_int_bool(type_cast_string_int($var));
+}
+
+/**
+ * @internal
  * @param int $var
  * @return bool|null
  */

@@ -76,13 +76,14 @@ A question mark can be added to a class to accept null, eg `"?string"` is simila
 
 Check the variable has a specific type or can be casted to that type, otherwise throw a `TypeError` or exception.
 
-This function is similar to `type_check`, with the difference that is will cast the value in some cases
+This function is similar to `type_check`, with the difference that it will cast the value in some cases
 
 
 | from     | to                    |                                          |
 |----------|-----------------------|------------------------------------------|
 | `string` | `int`                 | only numeric strings and < `PHP_INT_MAX` |
 | `string` | `float`               | only numeric strings                     |
+| `string` | `bool`                | only `"0"` or `"1"`                      |
 | `int`    | `bool`                | only 0 or 1                              |
 | `int`    | `float`               |                                          |
 | `int`    | `string`              |                                          |
